@@ -179,7 +179,7 @@ app.post("/api/submit-form", async (req, res) => {
       from: "anshinfotech1@gmail.com", // sender address
       to: email, // recipient
       subject: "Thank you for your enquiry", // Subject line
-      text: `We have received your enquiry. We will get back to you soon Please note down the below given id for future purposes. Refernce No.:- ${uniqueID}`, // Plain text body
+      text: `We have received your enquiry. We will get back to you soon Please note down the below given id for future purposes.  Refernce No.:- ${uniqueID}`, // Plain text body
       // You can also include HTML content
       html: `We have received your enquiry. We will get back to you soon Please note down the below given id for future purposes. Refernce No.:- ${uniqueID}`,
     });
