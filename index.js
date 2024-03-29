@@ -27,7 +27,7 @@ const fs = require("fs");
 const DB = async () => {
   try {
     await mongoose.connect(
-      "mongodb+srv://AIT:AIT@cluster0.tznmaxa.mongodb.net/"
+      "mongodb+srv://ait:ait@cluster0.elwntta.mongodb.net/data"
     );
     console.log("databse connected");
   } catch (error) {
