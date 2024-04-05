@@ -296,3 +296,15 @@ footer {
     padding: 0;
   }
 }
+.quick-links li a{
+  color: #9397a0;
+    margin-top: 14px;
+    text-align: start;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.5s ease;
+    text-decoration: none;
+}
+.quick-links li a:hover{
+  color: #0000ff;
+}
