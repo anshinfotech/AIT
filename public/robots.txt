@@ -1,0 +1,35 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /private/
+Disallow: /secrets/
+
+User-agent: Googlebot
+Allow: /index/
+Allow: /about/
+Allow: /Contactus/
+Allow: /FaQ's/
+Allow: /training/
+Allow: /register/
+Allow: courses/advancedIOS.html
+Allow: courses/advanceML.html
+Allow: courses/ai.html
+Allow: courses/appdev.html
+Allow: courses/bigdata.html
+Allow: courses/c++.html
+Allow: courses/ceh.html
+Allow: courses/cloud.html
+Allow: courses/cprograming.html
+Allow: courses/cyberSecurity.html
+Allow: courses/dataAnalyst.html
+Allow: courses/databaseAdmin.html
+Allow: courses/dataScience.html
+Allow: courses/devops.html
+Allow: courses/dm.html
+Allow: courses/iot.html
+Allow: courses/java.html
+Allow: courses/networkad.html
+Allow: courses/softwareTesting.html
+Allow: courses/web.html
+Allow: courses/webdesign.html
+
+
