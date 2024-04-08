@@ -91,7 +91,7 @@
     <!--* hero -->
     <div class="container-fluid slider">
       <div class="slider-h">
-        <h1>Advanced IOS</h1>
+        <h1>IOS</h1>
       </div>
     </div>
     <!--* hero -->
@@ -286,26 +286,18 @@
                       <button
                         type="button"
                         class="btn btn-primary"
-                        onclick="downloadPDF('WD')"
+                        onclick="downloadPDF('B-IOS')"
                         data-bs-dismiss="modal"
                       >
-                        Complete curiculum
+                        Basic IOS
                       </button>
                       <button
                         type="button"
                         class="btn btn-primary"
-                        onclick="downloadPDF('WD1')"
+                        onclick="downloadPDF('A-IOS')"
                         data-bs-dismiss="modal"
                       >
-                        1 month curiculum
-                      </button>
-                      <button
-                        type="button"
-                        class="btn btn-primary"
-                        onclick="downloadPDF('WD6')"
-                        data-bs-dismiss="modal"
-                      >
-                        6 weeks curiculum
+                        Advanced IOS
                       </button>
                     </div>
                   </div>
@@ -314,6 +306,7 @@
                       type="button"
                       class="btn btn-secondary"
                       data-bs-dismiss="modal"
+                      id="Secondmodal"
                     >
                       Close
                     </button>
@@ -328,7 +321,7 @@
               data-bs-toggle="modal"
               data-bs-target="#secondmodal"
             >
-              Join our online courses
+              Join our course now
             </button>
 
             <!-- Modal -->
@@ -343,7 +336,7 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <h1 class="modal-title fs-5" id="exampleModalLabel">
-                      Proceed To Course Duration And Payment
+                      Join Course Now
                     </h1>
                     <button
                       type="button"
@@ -353,21 +346,29 @@
                     ></button>
                   </div>
                   <div class="modal-body">
-                    <div class="d-flex justify-content-between">
-                      <a href="https://rzp.io/l/ZxMoFxyqGP">
+                    <div class="d-flex justify-content-between flex-wrap">
+                      <a href="../register.html" class="text-decoration-none">
                         <button
                           type="button"
                           class="content_btn2 text-decoration-none"
                         >
-                          Join our 6 Months Course
+                          Join our Offline Course
                         </button>
                       </a>
-                      <a href="https://rzp.io/l/ZxMoFxyqGP">
+                      <a href="https://rzp.io/l/YPTi8IXT" class="text-decoration-none">
                         <button
                           type="button"
                           class="content_btn2 text-decoration-none"
                         >
-                          Join our 45 Days Course
+                          Join our Advanced Online Course
+                        </button>
+                      </a>
+                      <a href="https://rzp.io/l/SBayqNa6" class="text-decoration-none">
+                        <button
+                          type="button"
+                          class="content_btn2 text-decoration-none"
+                        >
+                          Join our Basic Online Course
                         </button>
                       </a>
                     </div>
@@ -460,6 +461,12 @@
               document.getElementById("exampleModal").style.display = "none";
               document.getElementById("successModal").classList.add("show");
               document.getElementById("successModal").style.display = "block";
+              document.getElementById("Secondmodal")
+                  .addEventListener("click", () => {
+                    document.getElementById("successModal").style.display =
+                      "none";
+                    window.location.reload();
+                  });
             })
             .catch((error) => {
               console.error(
@@ -472,34 +479,25 @@
     });
 
     function downloadPDF(type) {
-      if (type === "WD") {
-        const fileName = "WD_6_Months_Course_New.pdf";
-        const filePath = "../Pdf's/WD 6 Months Course New.pdf";
+      if (type === "B-IOS") {
+        const fileName = "basics IOS New.pdf";
+        const filePath = "../Pdf's/basics IOS New.pdf";
         const a = document.createElement("a");
         a.href = filePath;
         a.download = fileName;
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
-      } else if (type === "WD1") {
-        const fileName = "WD_1_Month_Course_New.pdf";
-        const filePath = "../Pdf's/WD 1Month New.pdf";
+      } else if (type === "A-IOS") {
+        const fileName = "advanced IOS New.pdf";
+        const filePath = "../Pdf's/advanced IOS New (1).pdf";
         const a = document.createElement("a");
         a.href = filePath;
         a.download = fileName;
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
-      } else if (type === "WD6") {
-        const fileName = "WD_6_Weeks_Course_New.pdf";
-        const filePath = "../Pdf's/WD 6 Weeks New.pdf";
-        const a = document.createElement("a");
-        a.href = filePath;
-        a.download = fileName;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-      }
+      } 
     }
   </script>
 </html>

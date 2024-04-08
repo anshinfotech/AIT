@@ -306,22 +306,6 @@
                       >
                         Complete curiculum
                       </button>
-                      <button
-                        type="button"
-                        class="btn btn-primary"
-                        onclick="downloadPDF('WD1')"
-                        data-bs-dismiss="modal"
-                      >
-                        1 month curiculum
-                      </button>
-                      <button
-                        type="button"
-                        class="btn btn-primary"
-                        onclick="downloadPDF('WD6')"
-                        data-bs-dismiss="modal"
-                      >
-                        6 weeks curiculum
-                      </button>
                     </div>
                   </div>
                   <div class="modal-footer">
@@ -329,6 +313,7 @@
                       type="button"
                       class="btn btn-secondary"
                       data-bs-dismiss="modal"
+                      id="Secondmodal"
                     >
                       Close
                     </button>
@@ -343,7 +328,7 @@
               data-bs-toggle="modal"
               data-bs-target="#secondmodal"
             >
-              Join our online courses
+              Join our course now
             </button>
 
             <!-- Modal -->
@@ -358,7 +343,7 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <h1 class="modal-title fs-5" id="exampleModalLabel">
-                      Proceed To Course Duration And Payment
+                      Join Course Now
                     </h1>
                     <button
                       type="button"
@@ -470,12 +455,16 @@
                 if (!response.ok) {
                   throw new Error("Network response was not ok");
                 }
-                document
-                  .getElementById("exampleModal")
-                  .classList.remove("show");
+                document.getElementById("exampleModal").classList.remove("show");
                 document.getElementById("exampleModal").style.display = "none";
                 document.getElementById("successModal").classList.add("show");
                 document.getElementById("successModal").style.display = "block";
+                document.getElementById("Secondmodal")
+                    .addEventListener("click", () => {
+                      document.getElementById("successModal").style.display =
+                        "none";
+                      window.location.reload();
+                    });
               })
               .catch((error) => {
                 console.error(
@@ -486,10 +475,10 @@
               });
           });
       });
-
+  
       function downloadPDF(type) {
         if (type === "WD") {
-          const fileName = "DM_6_Months_Course_New.pdf";
+          const fileName = "DM 6 Months New.pdf";
           const filePath = "../Pdf's/DM 6 Months New.pdf";
           const a = document.createElement("a");
           a.href = filePath;
@@ -497,8 +486,8 @@
           document.body.appendChild(a);
           a.click();
           document.body.removeChild(a);
-          return;
-        }
+          return
+        } 
       }
     </script>
   </body>

@@ -3,8 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Empower your business with ANSH INFOTECH, Ludhiana's top IT solutions provider. From development to cybersecurity, AI to digital marketing, we got you covered!">
-    <title>Machine Learning - ANSH InfoTech:Leading IT Solutions in Ludhiana</title>
+    <meta
+      name="description"
+      content="Empower your business with ANSH INFOTECH, Ludhiana's top IT solutions provider. From development to cybersecurity, AI to digital marketing, we got you covered!"
+    />
+    <title>
+      Machine Learning - ANSH InfoTech:Leading IT Solutions in Ludhiana
+    </title>
     <link rel="stylesheet" href="web.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
@@ -111,24 +116,63 @@
             <div class="row">
               <div class="col-sm-6 col-12">
                 <ul class="content-list">
-                  <li><i class="fa-solid fa-check"></i> Introduction to Machine Learning</li>
-                  <li><i class="fa-solid fa-check"></i> Types of Machine Learning (Supervised, Unsupervised, Reinforcement Learning)</li>
-                  <li><i class="fa-solid fa-check"></i> Data Preprocessing and Cleaning</li>
-                  <li><i class="fa-solid fa-check"></i> Feature Engineering and Selection</li>
-                  <li><i class="fa-solid fa-check"></i> Regression and Classification</li>
-                  <li><i class="fa-solid fa-check"></i> Clustering and Dimensionality Reduction</li>
-                  <li><i class="fa-solid fa-check"></i> Model Evaluation and Validation</li>
+                  <li>
+                    <i class="fa-solid fa-check"></i> Introduction to Machine
+                    Learning
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-check"></i> Types of Machine Learning
+                    (Supervised, Unsupervised, Reinforcement Learning)
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-check"></i> Data Preprocessing and
+                    Cleaning
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-check"></i> Feature Engineering and
+                    Selection
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-check"></i> Regression and
+                    Classification
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-check"></i> Clustering and
+                    Dimensionality Reduction
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-check"></i> Model Evaluation and
+                    Validation
+                  </li>
                 </ul>
               </div>
               <div class="col-sm-6 col-12">
                 <ul class="content-list">
-                  <li><i class="fa-solid fa-check"></i> Ensemble Learning Techniques (Bagging, Boosting, Stacking)</li>
-                  <li><i class="fa-solid fa-check"></i> Neural Networks and Deep Learning</li>
-                  <li><i class="fa-solid fa-check"></i> Convolutional Neural Networks (CNN)</li>
-                  <li><i class="fa-solid fa-check"></i> Recurrent Neural Networks (RNN)</li>
-                  <li><i class="fa-solid fa-check"></i> Natural Language Processing (NLP)</li>
+                  <li>
+                    <i class="fa-solid fa-check"></i> Ensemble Learning
+                    Techniques (Bagging, Boosting, Stacking)
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-check"></i> Neural Networks and Deep
+                    Learning
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-check"></i> Convolutional Neural
+                    Networks (CNN)
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-check"></i> Recurrent Neural Networks
+                    (RNN)
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-check"></i> Natural Language
+                    Processing (NLP)
+                  </li>
                   <li><i class="fa-solid fa-check"></i> Recommender Systems</li>
-                  <li><i class="fa-solid fa-check"></i> Deployment and Scalability of Machine Learning Models</li>
+                  <li>
+                    <i class="fa-solid fa-check"></i> Deployment and Scalability
+                    of Machine Learning Models
+                  </li>
                 </ul>
               </div>
             </div>
@@ -284,7 +328,7 @@
                       <button
                         type="button"
                         class="btn btn-primary"
-                        onclick="downloadPDF('WD')"
+                        onclick="downloadPDF('ML-6months')"
                         data-bs-dismiss="modal"
                       >
                         Complete curiculum
@@ -292,18 +336,10 @@
                       <button
                         type="button"
                         class="btn btn-primary"
-                        onclick="downloadPDF('WD1')"
+                        onclick="downloadPDF('ML-6weeks')"
                         data-bs-dismiss="modal"
                       >
-                        1 month curiculum
-                      </button>
-                      <button
-                        type="button"
-                        class="btn btn-primary"
-                        onclick="downloadPDF('WD6')"
-                        data-bs-dismiss="modal"
-                      >
-                        6 weeks curiculum
+                        6 Weeks Curiculum
                       </button>
                     </div>
                   </div>
@@ -312,6 +348,7 @@
                       type="button"
                       class="btn btn-secondary"
                       data-bs-dismiss="modal"
+                      id="Secondmodal"
                     >
                       Close
                     </button>
@@ -326,7 +363,7 @@
               data-bs-toggle="modal"
               data-bs-target="#secondmodal"
             >
-              Join our online courses
+              Join our course now
             </button>
 
             <!-- Modal -->
@@ -341,7 +378,7 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <h1 class="modal-title fs-5" id="exampleModalLabel">
-                      Proceed To Course Duration And Payment
+                      Join Course Now
                     </h1>
                     <button
                       type="button"
@@ -442,7 +479,7 @@
               course: document.getElementById("course").value,
             };
             console.log(formData); // For debugging
-            fetch("http://localhost:3000/api/submit-form", {
+            fetch("https://ait-1.onrender.com/api/submit-form", {
               method: "POST",
               body: JSON.stringify(formData),
               headers: {
@@ -453,13 +490,19 @@
                 if (!response.ok) {
                   throw new Error("Network response was not ok");
                 }
-                // return response.blob(); // You don't need this if you are downloading from a fixed link
-                const a = document.createElement("a");
-                a.href = "../Pdf's/ML 6 Months New.pdf";
-                a.download = "ML_AIT.pdf"; // Set the file name for download
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
+                document
+                  .getElementById("exampleModal")
+                  .classList.remove("show");
+                document.getElementById("exampleModal").style.display = "none";
+                document.getElementById("successModal").classList.add("show");
+                document.getElementById("successModal").style.display = "block";
+                document
+                  .getElementById("Secondmodal")
+                  .addEventListener("click", () => {
+                    document.getElementById("successModal").style.display =
+                      "none";
+                    window.location.reload();
+                  });
               })
               .catch((error) => {
                 console.error(
@@ -470,6 +513,28 @@
               });
           });
       });
+
+      function downloadPDF(type) {
+        if (type === "ML-6months") {
+          const fileName = "ML 6 Months New.pdf";
+          const filePath = "../Pdf's/ML 6 Months New.pdf";
+          const a = document.createElement("a");
+          a.href = filePath;
+          a.download = fileName;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+        } else if (type === "ML-6weeks") {
+          const fileName = "ML 6 weeks New.pdf";
+          const filePath = "../Pdf's/ML 6 weeks New.pdf";
+          const a = document.createElement("a");
+          a.href = filePath;
+          a.download = fileName;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+        }
+      }
     </script>
   </body>
 </html>

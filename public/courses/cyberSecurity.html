@@ -3,8 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Empower your business with ANSH INFOTECH, Ludhiana's top IT solutions provider. From development to cybersecurity, AI to digital marketing, we got you covered!">
-    <title>CyberSecurity - ANSH InfoTech:Leading IT Solutions in Ludhiana</title>
+    <meta
+      name="description"
+      content="Empower your business with ANSH INFOTECH, Ludhiana's top IT solutions provider. From development to cybersecurity, AI to digital marketing, we got you covered!"
+    />
+    <title>
+      CyberSecurity - ANSH InfoTech:Leading IT Solutions in Ludhiana
+    </title>
     <link rel="stylesheet" href="web.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
@@ -369,7 +374,7 @@
                       <button
                         type="button"
                         class="btn btn-primary"
-                        onclick="downloadPDF('WD')"
+                        onclick="downloadPDF('CS')"
                         data-bs-dismiss="modal"
                       >
                         Complete curiculum
@@ -377,7 +382,7 @@
                       <button
                         type="button"
                         class="btn btn-primary"
-                        onclick="downloadPDF('WD1')"
+                        onclick="downloadPDF('CS1')"
                         data-bs-dismiss="modal"
                       >
                         1 month curiculum
@@ -385,7 +390,7 @@
                       <button
                         type="button"
                         class="btn btn-primary"
-                        onclick="downloadPDF('WD6')"
+                        onclick="downloadPDF('CS6')"
                         data-bs-dismiss="modal"
                       >
                         6 weeks curiculum
@@ -397,6 +402,7 @@
                       type="button"
                       class="btn btn-secondary"
                       data-bs-dismiss="modal"
+                      id="Secondmodal"
                     >
                       Close
                     </button>
@@ -411,7 +417,7 @@
               data-bs-toggle="modal"
               data-bs-target="#secondmodal"
             >
-              Join our online courses
+              Join our course now
             </button>
 
             <!-- Modal -->
@@ -426,7 +432,7 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <h1 class="modal-title fs-5" id="exampleModalLabel">
-                      Proceed To Course Duration And Payment
+                      Join Course Now
                     </h1>
                     <button
                       type="button"
@@ -538,13 +544,19 @@
                 if (!response.ok) {
                   throw new Error("Network response was not ok");
                 }
-                // return response.blob(); // You don't need this if you are downloading from a fixed link
-                const a = document.createElement("a");
-                a.href = "../Pdf's/Cyber Security 6 Months New.pdf";
-                a.download = "CyberSecurity_AIT.pdf"; // Set the file name for download
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
+                document
+                  .getElementById("exampleModal")
+                  .classList.remove("show");
+                document.getElementById("exampleModal").style.display = "none";
+                document.getElementById("successModal").classList.add("show");
+                document.getElementById("successModal").style.display = "block";
+                document
+                  .getElementById("Secondmodal")
+                  .addEventListener("click", () => {
+                    document.getElementById("successModal").style.display =
+                      "none";
+                    window.location.reload();
+                  });
               })
               .catch((error) => {
                 console.error(
@@ -555,6 +567,37 @@
               });
           });
       });
+
+      function downloadPDF(type) {
+        if (type === "CS") {
+          const fileName = "Cyber Security 6 Months New.pdf";
+          const filePath = "../Pdf's/Cyber Security 6 Months New.pdf";
+          const a = document.createElement("a");
+          a.href = filePath;
+          a.download = fileName;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+        } else if (type === "CS1") {
+          const fileName = "Cyber Security 1month New.pdf";
+          const filePath = "../Pdf's/Cyber Security 1month New.pdf";
+          const a = document.createElement("a");
+          a.href = filePath;
+          a.download = fileName;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+        } else if (type === "CS6") {
+          const fileName = "Cyber Security 6 weeks New.pdf";
+          const filePath = "../Pdf's/Cyber Security 6 weeks New.pdf";
+          const a = document.createElement("a");
+          a.href = filePath;
+          a.download = fileName;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+        }
+      }
     </script>
   </body>
 </html>

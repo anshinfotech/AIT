@@ -342,6 +342,7 @@
               console.log("Data from server:", data);
               if (data.success) {
                 alert("Query Submitted! We will reach out to you shortly!");
+                window.location.reload()
               } else {
                 alert("Something Went Wrong!");
               }

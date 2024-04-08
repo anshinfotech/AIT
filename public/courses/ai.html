@@ -332,7 +332,7 @@
                       <button
                         type="button"
                         class="btn btn-primary"
-                        onclick="downloadPDF('WD')"
+                        onclick="downloadPDF('AI')"
                         data-bs-dismiss="modal"
                       >
                         Complete curiculum
@@ -340,7 +340,7 @@
                       <button
                         type="button"
                         class="btn btn-primary"
-                        onclick="downloadPDF('WD1')"
+                        onclick="downloadPDF('AI1')"
                         data-bs-dismiss="modal"
                       >
                         1 month curiculum
@@ -348,7 +348,7 @@
                       <button
                         type="button"
                         class="btn btn-primary"
-                        onclick="downloadPDF('WD6')"
+                        onclick="downloadPDF('AI6')"
                         data-bs-dismiss="modal"
                       >
                         6 weeks curiculum
@@ -360,6 +360,7 @@
                       type="button"
                       class="btn btn-secondary"
                       data-bs-dismiss="modal"
+                      id="Secondmodal"
                     >
                       Close
                     </button>
@@ -374,7 +375,7 @@
               data-bs-toggle="modal"
               data-bs-target="#secondmodal"
             >
-              Join our online courses
+              Join our course now
             </button>
 
             <!-- Modal -->
@@ -389,7 +390,7 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <h1 class="modal-title fs-5" id="exampleModalLabel">
-                      Proceed To Course Duration And Payment
+                      Join Course Now
                     </h1>
                     <button
                       type="button"
@@ -490,7 +491,7 @@
               course: document.getElementById("course").value,
             };
             console.log(formData); // For debugging
-            fetch("http://localhost:3000/api/submit-form", {
+            fetch("https://ait-1.onrender.com/api/submit-form", {
               method: "POST",
               body: JSON.stringify(formData),
               headers: {
@@ -501,13 +502,19 @@
                 if (!response.ok) {
                   throw new Error("Network response was not ok");
                 }
-                // return response.blob(); // You don't need this if you are downloading from a fixed link
-                const a = document.createElement("a");
-                a.href = "../Pdf's/AI 6 months New.pdf";
-                a.download = "AI_AIT.pdf"; // Set the file name for download
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
+                document
+                  .getElementById("exampleModal")
+                  .classList.remove("show");
+                document.getElementById("exampleModal").style.display = "none";
+                document.getElementById("successModal").classList.add("show");
+                document.getElementById("successModal").style.display = "block";
+                document
+                  .getElementById("Secondmodal")
+                  .addEventListener("click", () => {
+                    document.getElementById("successModal").style.display =
+                      "none";
+                    window.location.reload();
+                  });
               })
               .catch((error) => {
                 console.error(
@@ -518,6 +525,37 @@
               });
           });
       });
+
+      function downloadPDF(type) {
+        if (type === "AI") {
+          const fileName = "AI_6_Months_Course_New.pdf";
+          const filePath = "../Pdf's/AI 6 months New.pdf";
+          const a = document.createElement("a");
+          a.href = filePath;
+          a.download = fileName;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+        } else if (type === "AI1") {
+          const fileName = "AI_1_Month_Course_New.pdf";
+          const filePath = "../Pdf's/AI 1Month New.pdf";
+          const a = document.createElement("a");
+          a.href = filePath;
+          a.download = fileName;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+        } else if (type === "AI6") {
+          const fileName = "AI_6_Weeks_Course_New.pdf";
+          const filePath = "../Pdf's/AI 6 Weeks New.pdf";
+          const a = document.createElement("a");
+          a.href = filePath;
+          a.download = fileName;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+        }
+      }
     </script>
   </body>
 </html>
