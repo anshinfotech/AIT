@@ -86,7 +86,7 @@
       AOS.init();
 
       // Fetch enquiry details from backend API
-      fetch("http://localhost:3000/api/allenquiries")
+      fetch("https://ait-1.onrender.com/api/allenquiries")
         .then((response) => response.json())
         .then((data) => {
           // Check if data retrieval was successful
@@ -121,7 +121,7 @@
           console.error("Error fetching enquiry details:", error);
         });
 
-      fetch("http://localhost:3000/api/allcontacts")
+      fetch("https://ait-1.onrender.com/api/allcontacts")
         .then((response) => response.json())
         .then((data) => {
           // Check if data retrieval was successful

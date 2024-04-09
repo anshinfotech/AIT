@@ -27,9 +27,10 @@ const fs = require("fs");
 const DB = async () => {
   try {
     await mongoose.connect(
-      "mongodb+srv://ait:ait@cluster0.elwntta.mongodb.net/data",{
-         serverSelectionTimeoutMS: 30000, // 30 seconds
-  socketTimeoutMS: 45000, // 45 seconds
+      "mongodb+srv://ait:ait@cluster0.elwntta.mongodb.net/data",
+      {
+        serverSelectionTimeoutMS: 30000, // 30 seconds
+        socketTimeoutMS: 45000, // 45 seconds
       }
     );
     console.log("databse connected");
@@ -244,6 +245,45 @@ app.get("/api/allcontacts", async (req, res) => {
   } catch (error) {
     console.log(error);
     res.status(400).send(error);
+  }
+});
+
+const formSchema = new mongoose.Schema(
+  {
+    name: { type: String, required: true },
+    email: { type: String, required: true },
+    phoneNumber: { type: String, required: true },
+    university: { type: String, required: true },
+    city: { type: String, required: true },
+  },
+  {
+    timestamps: true,
+  }
+);
+
+const FormSubmission = mongoose.model("FormSubmission", formSchema);
+
+app.post("/api/coursesubmit", async (req, res) => {
+  try {
+    const { name, email, phoneNumber, university, city } = req.body;
+
+    // Create new form submission
+    const submission = new FormSubmission({
+      name,
+      email,
+      phoneNumber,
+      university,
+      city,
+    });
+    console.log(submission);
+
+    // Save to database
+    await submission.save();
+
+    res.status(200).json({ message: "Form submitted successfully!" });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Internal Server Error" });
   }
 });
 
