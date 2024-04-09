@@ -124,7 +124,7 @@ body {
 .business {
   margin-top: 0;
   margin-bottom: 40px;
-  background-image: url("images/business-bg-1webP");
+  background-image: url("images/business-bg-1.webP");
   background-position: top left;
   background-size: auto;
 }
@@ -207,7 +207,7 @@ body {
 }
 .services {
   background-color: #eaeaf9;
-  background-image: url("https://preview.codeless.co/converta/default/wp-content/uploads/2023/02/bg-pattern-1webP");
+  background-image: url("https://preview.codeless.co/converta/default/wp-content/uploads/2023/02/bg-pattern-1.webP");
   padding: 20px 10px;
 }
 .services h6 {
@@ -295,7 +295,7 @@ body {
 }
 .development {
   margin-top: 140px;
-  background-image: url("images/bg-patter-new-min-1webP");
+  background-image: url("images/bg-patter-new-min-1.webP");
   background-position: top right;
   background-size: cover;
 }
