@@ -1,3 +1,6 @@
+Sitemap: https://anshinfotech.org/sitemap.xml
+
+
 User-agent: *
 Disallow: /admin/
 Disallow: /private/

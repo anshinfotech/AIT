@@ -180,6 +180,9 @@ body {
   border-radius: 10px;
   transition: all 0.3s;
 }
+.content_btn2:hover{
+  background-color: #321370 !important;
+}
 
 footer {
   padding: 100px 0px;
@@ -251,3 +254,4 @@ footer {
 .quick-links li a:hover{
   color: #0000ff;
 }
+
