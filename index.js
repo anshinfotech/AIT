@@ -287,8 +287,10 @@ app.post("/api/coursesubmit", async (req, res) => {
   }
 });
 
+app.use((req, res, next) => {
+  res.status(404).sendFile(path.join(__dirname, "public", "404.html"));
+});
 app.use(express.static(path.join(__dirname, "public")));
-
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
