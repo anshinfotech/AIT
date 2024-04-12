@@ -1,156 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Empower your business with ANSH INFOTECH, Ludhiana's top IT solutions provider. From development to cybersecurity, AI to digital marketing, we got you covered!">
-    <title>Admin - ANSH InfoTech:Leading IT Solutions in Ludhiana</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
-      crossorigin="anonymous"
-    />
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <!-- AOS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <style>
-      /* Custom Styles */
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f8f9fa;
-        margin: 0;
-        padding: 0;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Empower your business with ANSH INFOTECH, Ludhiana's top IT solutions provider. From development to cybersecurity, AI to digital marketing, we got you covered!">
+  <title>Admin - ANSH InfoTech: Leading IT Solutions in Ludhiana</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    /* Custom Styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
 
-      .enquiry {
-        margin-bottom: 20px;
-        padding: 20px;
-        background-color: #fff;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 250px;
+      background-color: #343a40;
+      color: #fff;
+      padding-top: 20px;
+    }
 
-      .enquiry h2 {
-        color: #333;
-        margin-bottom: 10px;
-      }
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+    }
 
-      .enquiry p {
-        color: #666;
-      }
+    .sidebar ul li {
+      padding: 10px 20px;
+      border-bottom: 1px solid #5a6268;
+    }
 
-      /* Contact Styles */
-      .contact {
-        margin-bottom: 20px;
-        padding: 20px;
-        background-color: #f0f0f0;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
+    .sidebar ul li:last-child {
+      border-bottom: none;
+    }
 
-      .contact h2 {
-        color: #333;
-        margin-bottom: 10px;
-      }
+    .sidebar ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
 
-      .contact p {
-        color: #666;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container mt-5">
-      <div id="enquiryDetailsContainer" class="row"></div>
+    .sidebar ul li a:hover {
+      color: #ffc107;
+    }
+
+    .content {
+      margin-left: 250px;
+      padding: 20px;
+    }
+
+    .header {
+      background-color: #212529;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .enquiry,
+    .contact {
+      margin-bottom: 20px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .enquiry h2,
+    .contact h2 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .enquiry p,
+    .contact p {
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <ul>
+      <li><a href="#enquiryDetailsContainer">Enquiries</a></li>
+      <li><a href="#contactusContainer">Contact Messages</a></li>
+      <!-- Add more links for other sections if needed -->
+    </ul>
+  </div>
+
+  <div class="content">
+    <div class="header">
+      <h1>Admin Dashboard</h1>
     </div>
 
-    <div class="container mt-5">
-      <div id="contactusContainer" class="row"></div>
+    <div id="enquiryDetailsContainer" class="enquiries-section">
+      <!-- Enquiries will be loaded here -->
     </div>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-      crossorigin="anonymous"
-    ></script>
-    <!-- AOS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init();
+    <div id="contactusContainer" class="contact-messages-section">
+      <!-- Contact messages will be loaded here -->
+    </div>
+  </div>
 
-      // Fetch enquiry details from backend API
-      fetch("https://ait-1.onrender.com/api/allenquiries")
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  
+    const enquiryContainer = document.getElementById("enquiryDetailsContainer");
+    const contactContainer = document.getElementById("contactusContainer");
+  
+    const enquiryLink = document.querySelector('a[href="#enquiryDetailsContainer"]');
+    const contactLink = document.querySelector('a[href="#contactusContainer"]');
+  
+    enquiryLink.addEventListener('click', function(event) {
+      event.preventDefault();
+      fetchData("https://ait-1.onrender.com/api/allenquiries", enquiryContainer);
+      contactContainer.style.display = "none";
+      enquiryContainer.style.display = "block";
+    });
+  
+    contactLink.addEventListener('click', function(event) {
+      event.preventDefault();
+      fetchData("https://ait-1.onrender.com/api/allcontacts", contactContainer);
+      enquiryContainer.style.display = "none";
+      contactContainer.style.display = "block";
+    });
+  
+    function fetchData(url, container) {
+      fetch(url)
         .then((response) => response.json())
         .then((data) => {
-          // Check if data retrieval was successful
           if (data.success) {
-            const enquiryDetailsContainer = document.getElementById(
-              "enquiryDetailsContainer"
-            );
-            // Loop through the data and create HTML elements to display the details
-            data.data.forEach((enquiry) => {
-              const enquiryDiv = document.createElement("div");
-              enquiryDiv.classList.add("col-md-6");
-              enquiryDiv.innerHTML = `
-                <div class="enquiry">
-                    <h2>${enquiry.name}</h2>
-                    <p>ID: ${enquiry.uniqueID}</p>
-                    <p>Email: ${enquiry.email}</p>
-                    <p>Phone: ${enquiry.phone}</p>
-                    <p>College: ${enquiry.college}</p>
-                    <p>Address: ${enquiry.address}</p>
-                    <p>Course: ${enquiry.course}</p>
-                    <p>Course Pdf Downloaded: ${enquiry.coursePDF}</p>
-                </div>
+            container.innerHTML = ""; // Clear previous data
+            if (container === enquiryContainer) {
+              data.data.forEach((enquiry) => {
+                const enquiryDiv = document.createElement("div");
+                enquiryDiv.classList.add("enquiry");
+                enquiryDiv.innerHTML = `
+                  <h2>${enquiry.name}</h2>
+                  <p>ID: ${enquiry.uniqueID}</p>
+                  <p>Email: ${enquiry.email}</p>
+                  <p>Phone: ${enquiry.phone}</p>
+                  <p>College: ${enquiry.college}</p>
+                  <p>Address: ${enquiry.address}</p>
+                  <p>Course: ${enquiry.course}</p>
+                  <p>Course Pdf Downloaded: ${enquiry.coursePDF}</p>
                 `;
-              enquiryDetailsContainer.appendChild(enquiryDiv);
-            });
+                container.appendChild(enquiryDiv);
+              });
+            } else if (container === contactContainer) {
+              data.contactdata.forEach((contact) => {
+                const contactDiv = document.createElement("div");
+                contactDiv.classList.add("contact");
+                contactDiv.innerHTML = `
+                  <h2>${contact.name}</h2>
+                  <p>ID: ${contact.uniqueID}</p>
+                  <p>Email: ${contact.email}</p>
+                  <p>Subject: ${contact.subject}</p>
+                  <p>Message: ${contact.message}</p>
+                `;
+                container.appendChild(contactDiv);
+              });
+            }
           } else {
-            // Display error message if data retrieval failed
-            console.error("Failed to fetch enquiry details:", data.error);
+            console.error(`Failed to fetch data for ${container.id}:`, data.error);
           }
         })
         .catch((error) => {
-          console.error("Error fetching enquiry details:", error);
+          console.error(`Error fetching data for ${container.id}:`, error);
         });
-
-      fetch("https://ait-1.onrender.com/api/allcontacts")
-        .then((response) => response.json())
-        .then((data) => {
-          // Check if data retrieval was successful
-          if (data.success) {
-            const contactusContainer =
-              document.getElementById("contactusContainer");
-            // Loop through the data and create HTML elements to display the details
-            data.contactdata.forEach((contact) => {
-              const contactDiv = document.createElement("div");
-              contactDiv.classList.add("col-md-6");
-              contactDiv.innerHTML = `
-                <div class="contact">
-                    <h2>${contact.name}</h2>
-                    <p>ID: ${contact.uniqueID}</p>
-                    <p>Email: ${contact.email}</p>
-                    <p>Subject: ${contact.subject}</p>
-                    <p>Message: ${contact.message}</p>
-                </div>
-                `;
-              contactusContainer.appendChild(contactDiv);
-            });
-          } else {
-            // Display error message if data retrieval failed
-            console.error("Failed to fetch contact details:", data.error);
-          }
-        })
-        .catch((error) => {
-          console.error("Error fetching contact details:", error);
-        });
-    </script>
-  </body>
+    }
+  </script>
+  
+  
+</body>
 </html>
