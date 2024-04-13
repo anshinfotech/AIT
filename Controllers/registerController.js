@@ -49,7 +49,7 @@ const registerStudent = async (req, res) => {
 
 const getStudentDetails = async (req, res) => {
   try {
-    let registrations = await Registration.find();
+    let registrations = await Registration.find().sort({ createdAt: -1 });
     console.log(registrations);
     res.status(200).json({ success: true, data: registrations });
   } catch (error) {

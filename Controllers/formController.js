@@ -26,8 +26,7 @@ const coursesubmit = async (req, res) => {
 
 const getCourses = async(req,res)=>{
     try{
-       const submissions=await FormSubmission.find()
-       .sort('-createdAt');
+       const submissions=await FormSubmission.find().sort({ createdAt: -1 });
        if(!submissions){throw new Error()}
        res.status(200).json(submissions)
     }catch(err){

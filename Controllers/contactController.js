@@ -22,7 +22,7 @@ const contactQuerySubmit = async (req, res) => {
 
 const allqueries = async (req, res) => {
   try {
-    const contactdata = await Contact.find();
+    const contactdata = await Contact.find().sort({ createdAt: -1 });
     res.status(200).json({ success: true, contactdata });
     console.log(contactdata);
   } catch (error) {
