@@ -181,8 +181,13 @@
       // Append tbody to table
       table.appendChild(tbody);
 
+      // Create a wrapper div with Bootstrap class for responsiveness
+      const tableWrapper = document.createElement("div");
+      tableWrapper.classList.add("table-responsive");
+      tableWrapper.appendChild(table);
+
       // Append table to container
-      container.appendChild(table);
+      container.appendChild(tableWrapper);
     }
 
     // Update fetchData function to render data in tables
@@ -209,7 +214,5 @@
         });
     }
   </script>
-  
-  
 </body>
 </html>
