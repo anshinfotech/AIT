@@ -134,42 +134,71 @@
       enquiryContainer.style.display = "none";
       contactContainer.style.display = "block";
     });
-  
+
+    // Function to render data in tables
+    function renderDataInTable(data, container) {
+      // Clear previous data
+      container.innerHTML = "";
+
+      // Create table element
+      const table = document.createElement("table");
+      table.classList.add("table");
+
+      // Create table header
+      const thead = document.createElement("thead");
+      const headerRow = document.createElement("tr");
+
+      // Determine headers based on the first item in the data array
+      const headers = Object.keys(data[0]);
+
+      // Create table header cells
+      headers.forEach((header) => {
+        const th = document.createElement("th");
+        th.textContent = header;
+        headerRow.appendChild(th);
+      });
+
+      // Append header row to thead
+      thead.appendChild(headerRow);
+
+      // Append thead to table
+      table.appendChild(thead);
+
+      // Create table body
+      const tbody = document.createElement("tbody");
+
+      // Populate table body with data rows
+      data.forEach((item) => {
+        const row = document.createElement("tr");
+        headers.forEach((header) => {
+          const cell = document.createElement("td");
+          cell.textContent = item[header];
+          row.appendChild(cell);
+        });
+        tbody.appendChild(row);
+      });
+
+      // Append tbody to table
+      table.appendChild(tbody);
+
+      // Append table to container
+      container.appendChild(table);
+    }
+
+    // Update fetchData function to render data in tables
     function fetchData(url, container) {
       fetch(url)
         .then((response) => response.json())
         .then((data) => {
           if (data.success) {
-            container.innerHTML = ""; // Clear previous data
             if (container === enquiryContainer) {
-              data.data.forEach((enquiry) => {
-                const enquiryDiv = document.createElement("div");
-                enquiryDiv.classList.add("enquiry");
-                enquiryDiv.innerHTML = `
-                  <h2>${enquiry.name}</h2>
-                  <p>ID: ${enquiry.uniqueID}</p>
-                  <p>Email: ${enquiry.email}</p>
-                  <p>Phone: ${enquiry.phone}</p>
-                  <p>College: ${enquiry.college}</p>
-                  <p>Address: ${enquiry.address}</p>
-                  <p>Course: ${enquiry.course}</p>
-                  <p>Course Pdf Downloaded: ${enquiry.coursePDF}</p>
-                `;
-                container.appendChild(enquiryDiv);
-              });
+              renderDataInTable(data.data, enquiryContainer);
+              contactContainer.style.display = "none";
+              enquiryContainer.style.display = "block";
             } else if (container === contactContainer) {
-              data.contactdata.forEach((contact) => {
-                const contactDiv = document.createElement("div");
-                contactDiv.classList.add("contact");
-                contactDiv.innerHTML = `
-                  <h2>${contact.name}</h2>
-                  <p>ID: ${contact.uniqueID}</p>
-                  <p>Email: ${contact.email}</p>
-                  <p>Subject: ${contact.subject}</p>
-                  <p>Message: ${contact.message}</p>
-                `;
-                container.appendChild(contactDiv);
-              });
+              renderDataInTable(data.contactdata, contactContainer);
+              enquiryContainer.style.display = "none";
+              contactContainer.style.display = "block";
             }
           } else {
             console.error(`Failed to fetch data for ${container.id}:`, data.error);
