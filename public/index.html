@@ -64,20 +64,7 @@
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html">
           <!-- <img src="images/logo.webP" alt="Bootstrap" width="240" height="50" /> -->
-          <p
-            style="
-              display: block;
-              font-size: 2em;
-              margin-block-start: 0.67em;
-              margin-block-end: 0.67em;
-              margin-inline-start: 0px;
-              margin-inline-end: 0px;
-              font-weight: bold;
-            "
-            class="heading"
-          >
-            ANSH InfoTech
-          </p>
+          <h1 class="heading">ANSH InfoTech</h1>
         </a>
         <button
           class="navbar-toggler"
@@ -801,7 +788,20 @@
               alt=""
               class="img-fluid"
             /> -->
-            <h1 class="text-white">ANSH InfoTech</h1>
+            <p
+              style="
+                display: block;
+                font-size: 2em;
+                margin-block-start: 0.67em;
+                margin-block-end: 0.67em;
+                margin-inline-start: 0px;
+                margin-inline-end: 0px;
+                font-weight: bold;
+              "
+              class="text-white"
+            >
+              ANSH InfoTech
+            </p>
             <p>
               Creative-powered to fuel your growth goals. We build world-class
               digital products, software and branding.
@@ -908,6 +908,73 @@
           },
         },
       });
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": "Your Company Name",
+        "url": "https://aesthaticcollection.shop/",
+        "logo": "https://aesthaticcollection.shop/logo.png",
+        "description": "Your company description providing industrial training and internships in various IT fields.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Your Street Address",
+          "addressLocality": "Your City",
+          "addressRegion": "Your State",
+          "postalCode": "Your Postal Code",
+          "addressCountry": "Your Country"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "Your Phone Number",
+          "contactType": "Customer service",
+          "areaServed": "Your Country"
+        },
+        "sameAs": [
+          "https://www.facebook.com/YourPage",
+          "https://twitter.com/YourHandle",
+          "https://www.linkedin.com/company/YourCompany",
+          "https://www.instagram.com/YourHandle"
+        ],
+        "memberOf": {
+          "@type": "Organization",
+          "name": "Skill India"
+        },
+        "foundingDate": "Year of founding",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Training Courses",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Course",
+                "name": "Web Development Training",
+                "description": "Training course covering web development technologies such as HTML, CSS, JavaScript, etc.",
+                "provider": {
+                  "@type": "Organization",
+                  "name": "Your Company Name"
+                }
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Course",
+                "name": "Cybersecurity Training",
+                "description": "Training course covering cybersecurity concepts, tools, and techniques.",
+                "provider": {
+                  "@type": "Organization",
+                  "name": "Your Company Name"
+                }
+              }
+            }
+            // Add more courses here...
+          ]
+        }
+      }
     </script>
   </body>
 </html>
