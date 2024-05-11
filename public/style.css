@@ -74,14 +74,14 @@ body {
   width: 100%;
 }
 .heading,
-.hero-col h1 .gradient-text {
+.hero-col .p1 .gradient-text {
   background: linear-gradient(272.54deg, #ffabe6 12.86%, #857fff 68.06%);
   -webkit-text-fill-color: transparent;
 }
 .hero-col {
   margin-left: 40px;
 }
-.hero-col h1 {
+.hero-col .p1 {
   color: #2d3958;
   font-weight: 700;
   font-size: 72px;
@@ -98,7 +98,7 @@ body {
 .services {
   background-repeat: no-repeat;
 }
-.hero-col h1 .gradient-text {
+.hero-col .p1 .gradient-text {
   background-clip: inherit;
   -webkit-background-clip: text;
 }
