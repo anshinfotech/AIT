@@ -148,7 +148,7 @@
       enquiryLink.addEventListener("click", function (event) {
         event.preventDefault();
         fetchData(
-          "https://ait-1.onrender.com/api/allenquiries",
+          "http://localhost:3000/api/allstudents",
           enquiryContainer
         );
         contactContainer.style.display = "none";
@@ -158,7 +158,7 @@
       contactLink.addEventListener("click", function (event) {
         event.preventDefault();
         fetchData(
-          "https://ait-1.onrender.com/api/allcontacts",
+          "http://localhost:3000/api/allcontacts",
           contactContainer
         );
         enquiryContainer.style.display = "none";

@@ -6,10 +6,10 @@ function requireAdminLogin(req, res, next) {
   if (!token) {
     return res
       .status(401)
-      .send({ success: false, message: "No token provided" });
+      .send({ success: false, message: "No token provided. Please LOGIN FIRST" });
   }
 
-  jwt.verify(token, "process.env.JWT_SECRET", (err, decoded) => {
+  jwt.verify(token, "secret", (err, decoded) => {
     if (err) {
       return res
         .status(403)

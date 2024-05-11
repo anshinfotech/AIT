@@ -118,7 +118,7 @@ body {
   color: #2d3958;
 }
 #course_content {
-  margin: 150px auto;
+  margin: 150px auto 50px auto;
   max-width: 1300px;
   padding: 0 20px;
 }
