@@ -122,11 +122,29 @@ body {
   border: 1px solid var(--btn-color);
 }
 .business {
-  margin-top: 0;
+  margin-top: 20px;
   margin-bottom: 40px;
   background-image: url("images/business-bg-1.webP");
   background-position: top left;
   background-size: auto;
+}
+@media screen and (max-width:1108px) {
+  .business {
+    margin-top: 110px;
+  }
+  
+}
+@media screen and (max-width:821px) {
+  .business {
+    margin-top: 250px;
+  }
+  
+}
+@media screen and (max-width:577px) {
+  .business {
+    margin-top: 720px !important
+  }
+  
 }
 .development,
 .elementor,
@@ -481,7 +499,7 @@ footer {
   }
   .business {
     background-image: none;
-    margin-top: 500px;
+    margin-top: 1100px;
   }
   .business h2 {
     font-size: 26px;
@@ -530,3 +548,4 @@ footer {
 .quick-links li a {
   text-decoration: none;
 }
+

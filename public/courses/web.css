@@ -255,3 +255,43 @@ footer {
   color: #0000ff;
 }
 
+.review-section {
+  background-color: #f9f9f9;
+  padding: 50px 0;
+}
+
+.review-content h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.review-content p {
+  font-size: 18px;
+  color: #666;
+}
+
+.review-content img {
+  border-radius: 10px;
+}
+
+.review-form h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.review-form .form-group label {
+  font-weight: bold;
+}
+
+.review-form button {
+  margin-top: 20px;
+}
+
+/* Optional: Add your custom styles to make it more attractive */
+.cloudinary-button{
+  background-color: white !important;
+  color: black !important;
+}
+.cloudinary-button:hover{
+  box-shadow: none !important;
+}
