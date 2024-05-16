@@ -1147,7 +1147,7 @@
             course: document.getElementById("course").value,
           };
           console.log(formData); // For debugging
-          fetch("https://anshinfotech.org/api/submit-form", {
+          fetch("https://www.anshinfotech.org/api/submit-form", {
             method: "POST",
             body: JSON.stringify(formData),
             headers: {
@@ -1210,7 +1210,7 @@
 
         try {
           const response = await fetch(
-            "https://anshinfotech.org/api/coursesubmit",
+            "https://www.anshinfotech.org/api/coursesubmit",
             {
               method: "post",
               headers: {
