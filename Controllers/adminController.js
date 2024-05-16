@@ -10,7 +10,7 @@ const transporter = nodemailer.createTransport({
   auth: {
     // TODO: replace `user` and `pass` values from <https://forwardemail.net>
     user: "anshinfotech1@gmail.com",
-    pass: "xbgddxncrtdjbbub",
+    pass: "lcooffigfklnztpl",
   },
 });
 
@@ -128,6 +128,7 @@ const verifyAdmin = async (req, res) => {
     if (admin.otp === otp) {
       admin.otp = null;
       admin.verified = true;
+      admin.save()
       res.status(200).send({ message: "Verification Successfull", admin });
       return;
     }
