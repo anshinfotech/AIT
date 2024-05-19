@@ -1,7 +1,8 @@
 const Contact = require("../Models/contactSchema");
+const exceljs = require("exceljs");
 
 const contactQuerySubmit = async (req, res) => {
-  const { name, email, subject, message } = req.body;
+  const { name, email, subject, message,mobile } = req.body;
 
   try {
     const contactdata = new Contact({
@@ -9,6 +10,7 @@ const contactQuerySubmit = async (req, res) => {
       email,
       subject,
       message,
+      mobile,
       uniqueID: Math.floor(Math.random() * 900000) + 100000,
     });
     const savedEnquiry = await contactdata.save();
@@ -31,4 +33,38 @@ const allqueries = async (req, res) => {
   }
 };
 
-module.exports = { allqueries, contactQuerySubmit };
+const downloadExcel = async (req, res) => {
+  try {
+    let workbook= new exceljs.Workbook()
+    const sheet = workbook.addWorksheet("Contact Enquiries")
+    const contactdata = await Contact.find().sort({ name: "ascending" });
+    sheet.columns=[
+      {header:"Name",key:"name",width:25},
+      {header:"Mobile",key:"mobile",width:25},
+    ]
+    contactdata.map(contact=>{
+      sheet.addRow({
+        name:contact.name,
+        mobile:contact.mobile
+      })
+    })
+    const headerRow = sheet.getRow(1);
+    headerRow.eachCell((cell) => {
+      cell.font = { bold: true };
+    });
+    res.setHeader(
+      "Content-Type",
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    );
+    res.setHeader(
+      "Content-Disposition",
+      "attachment; filename=contact_enquiries.xlsx"
+    );
+    await workbook.xlsx.write(res)
+    res.end()
+  } catch (error) {
+    res.send(error)
+  }
+};
+
+module.exports = { allqueries, contactQuerySubmit ,downloadExcel};

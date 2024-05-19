@@ -164,11 +164,11 @@ const adminLogin = async (req, res) => {
 
     // Create a JWT token for admin authentication
     const token = jwt.sign({ id: admin._id }, "secret", {
-      expiresIn: "1h",
+      expiresIn: "12h",
     });
 
     // Set token as a cookie
-    res.cookie("token", token, { httpOnly: true, maxAge: 3600000 }); // 1 hour expiration
+    res.cookie("token", token, { httpOnly: true, maxAge: 3600000 * 12 }); // 1 hour expiration
 
     res.status(200).send({
       success: true,

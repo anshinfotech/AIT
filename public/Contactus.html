@@ -250,6 +250,16 @@
                     />
                   </div>
                   <div class="mb-3">
+                    <label for="mobile" class="form-label">Your Mobile No.</label>
+                    <input
+                      type="tel"
+                      class="form-control"
+                      id="mobile"
+                      name="mobile"
+                      required
+                    />
+                  </div>
+                  <div class="mb-3">
                     <label for="subject" class="form-label">Subject</label>
                     <input
                       type="text"
@@ -373,6 +383,7 @@
               email: document.getElementsByName("email")[0].value,
               subject: document.getElementsByName("subject")[0].value,
               message: document.getElementsByName("message")[0].value,
+              mobile: document.getElementsByName("mobile")[0].value,
             }),
           })
             .then((response) => {
