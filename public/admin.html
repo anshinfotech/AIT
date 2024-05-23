@@ -157,6 +157,108 @@
         </div>
       </div>
     </nav>
+
+    <!-- Welcome Message -->
+    <h2>Welcome To Admin Dashboard</h2>
+    <h4>Please Click on Below Tabs to view specifics of each section</h4>
+    <div class="container" id="showwelcome">
+      <div class="row">
+        <div class="col-md-3 mb-1" id="showteamcard">
+          <a onclick="showEmployee()">
+            <div class="card" style="width: 18rem">
+              <img
+                src="https://images.unsplash.com/photo-1603201667141-5a2d4c673378?q=80&w=1796&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">View Team</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-3 mb-5" id="addteamcard">
+          <a onclick="showAddEmployee()">
+            <div class="card" style="width: 18rem">
+              <img
+                src="https://images.unsplash.com/photo-1586282391129-76a6df230234?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Add Team Members</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-3 mb-5" id="showreviewcard">
+          <a onclick="showReviews()">
+            <div class="card" style="width: 18rem">
+              <img
+                src="https://images.unsplash.com/photo-1633613286991-611fe299c4be?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">See Reviews</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-3 mb-5" id="showsenquirycard">
+          <a onclick="showEnquires()">
+            <div class="card" style="width: 18rem">
+              <img
+                src="https://plus.unsplash.com/premium_photo-1680303134459-912abf8efe2f?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">See Syllabus Enquires</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-3 mb-5" id="showcontactuscard">
+          <a onclick="showContacts()">
+            <div class="card" style="width: 18rem">
+              <img
+                src="https://images.unsplash.com/photo-1528747045269-390fe33c19f2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">See Contact Us Enquires</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-3 mb-5" id="addblogcard">
+          <div class="card" style="width: 18rem">
+            <img
+              src="https://images.unsplash.com/photo-1485988412941-77a35537dae4?q=80&w=1796&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Add Blogs</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-5" id="showblogcard">
+          <div class="card" style="width: 18rem">
+            <img
+              src="https://images.unsplash.com/photo-1546074177-ffdda98d214f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Show Blogs</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- reviews table -->
     <div id="reviewsTable">
       <table class="table table-striped table-hover table-bordered">
@@ -181,7 +283,10 @@
 
     <!-- Contact table -->
     <div id="contactTable">
-      <a class="btn btn-success" href="https://www.anshinfotech.org/api/downloadcontacts">
+      <a
+        class="btn btn-success"
+        href="https://www.anshinfotech.org/api/downloadcontacts"
+      >
         <i class="fa-solid fa-download"></i>Download as Excel
       </a>
       <table class="table table-striped table-hover table-bordered">
@@ -204,7 +309,10 @@
 
     <!-- Enquiry table -->
     <div id="enquiryTable">
-      <a class="btn btn-success" href="https://www.anshinfotech.org/api/downloadenquiry">
+      <a
+        class="btn btn-success"
+        href="https://www.anshinfotech.org/api/downloadenquiry"
+      >
         <i class="fa-solid fa-download"></i>Download as Excel
       </a>
       <table class="table table-striped table-hover table-bordered">
@@ -576,6 +684,13 @@
         document.getElementById("enquiryTable").style.display = "none";
         document.getElementById("employeeTable").style.display = "none";
         document.getElementById("employee").style.display = "none";
+        document.getElementById("showteamcard").style.display = "none";
+        document.getElementById("addteamcard").style.display = "none";
+        document.getElementById("showreviewcard").style.display = "none";
+        document.getElementById("showsenquirycard").style.display = "none";
+        document.getElementById("showcontactuscard").style.display = "none";
+        document.getElementById("addblogcard").style.display = "none";
+        document.getElementById("showblogcard").style.display = "none";
       }
       function showContacts() {
         document.getElementById("reviewsTable").style.display = "none";
@@ -583,6 +698,13 @@
         document.getElementById("enquiryTable").style.display = "none";
         document.getElementById("employeeTable").style.display = "none";
         document.getElementById("employee").style.display = "none";
+        document.getElementById("showteamcard").style.display = "none";
+        document.getElementById("addteamcard").style.display = "none";
+        document.getElementById("showreviewcard").style.display = "none";
+        document.getElementById("showsenquirycard").style.display = "none";
+        document.getElementById("showcontactuscard").style.display = "none";
+        document.getElementById("addblogcard").style.display = "none";
+        document.getElementById("showblogcard").style.display = "none";
       }
       function showEnquires() {
         document.getElementById("reviewsTable").style.display = "none";
@@ -590,6 +712,13 @@
         document.getElementById("enquiryTable").style.display = "block";
         document.getElementById("employeeTable").style.display = "none";
         document.getElementById("employee").style.display = "none";
+        document.getElementById("showteamcard").style.display = "none";
+        document.getElementById("addteamcard").style.display = "none";
+        document.getElementById("showreviewcard").style.display = "none";
+        document.getElementById("showsenquirycard").style.display = "none";
+        document.getElementById("showcontactuscard").style.display = "none";
+        document.getElementById("addblogcard").style.display = "none";
+        document.getElementById("showblogcard").style.display = "none";
       }
       function showEmployee() {
         document.getElementById("reviewsTable").style.display = "none";
@@ -597,19 +726,33 @@
         document.getElementById("enquiryTable").style.display = "none";
         document.getElementById("employeeTable").style.display = "block";
         document.getElementById("employee").style.display = "none";
+        document.getElementById("showteamcard").style.display = "none";
+        document.getElementById("addteamcard").style.display = "none";
+        document.getElementById("showreviewcard").style.display = "none";
+        document.getElementById("showsenquirycard").style.display = "none";
+        document.getElementById("showcontactuscard").style.display = "none";
+        document.getElementById("addblogcard").style.display = "none";
+        document.getElementById("showblogcard").style.display = "none";
       }
       function showAddEmployee() {
         document.getElementById("reviewsTable").style.display = "none";
         document.getElementById("contactTable").style.display = "none";
         document.getElementById("enquiryTable").style.display = "none";
         document.getElementById("employeeTable").style.display = "none";
+        document.getElementById("showteamcard").style.display = "none";
+        document.getElementById("addteamcard").style.display = "none";
+        document.getElementById("showreviewcard").style.display = "none";
+        document.getElementById("showsenquirycard").style.display = "none";
+        document.getElementById("showcontactuscard").style.display = "none";
+        document.getElementById("addblogcard").style.display = "none";
+        document.getElementById("showblogcard").style.display = "none";
         document.getElementById("employee").style.display = "block";
       }
     </script>
     <script>
       const downloadContacts = async () => {
         try {
-          await fetch("https://www.anshinfotech.org/api/download")
+          await fetch("https://www.anshinfotech.org/api/download");
         } catch (error) {
           console.log();
         }
