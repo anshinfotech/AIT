@@ -299,6 +299,7 @@
             <th>ID</th>
             <th>Name</th>
             <th>Email</th>
+            <th>Phone</th>
             <th>Subject</th>
             <th>Message</th>
             <th>Created At</th>
@@ -549,9 +550,10 @@
           row.innerHTML = `
         <td>${contact.uniqueID}</td>
         <td>${contact.name}</td>
+        <td>${contact.mobile}</td>
         <td >${contact.email}</td>
         <td>${contact.subject}</td>
-        <td>${contact.message}</td>
+        <td style="white-space: pre-wrap;">${contact.message}</td>
         <td>${convertToIST(new Date(contact.createdAt))}</td>
       `;
           contactsBody.appendChild(row);
