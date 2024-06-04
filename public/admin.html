@@ -762,7 +762,7 @@
           const data = await response.json();
           console.log(data);
           if (data.success) {
-            displayRegistrations(data.data);
+            displayRegisterations(data.data);
           } else {
             console.error(data.message);
           }
