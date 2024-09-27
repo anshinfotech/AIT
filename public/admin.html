@@ -42,6 +42,7 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet" />
     <style>
       /* Add your CSS styles for the table here */
       .review-cell {
@@ -57,7 +58,7 @@
       #contactTable,
       #enquiryTable,
       #employee,
-      #employeeTable {
+      #employeeTable,#registerations,#addblogs {
         display: none;
       }
       .nav-item .nav-link:hover {
@@ -251,16 +252,18 @@
           </a>
         </div>
         <div class="col-md-3 mb-5" id="addblogcard">
-          <div class="card" style="width: 18rem">
-            <img
-              src="https://images.unsplash.com/photo-1485988412941-77a35537dae4?q=80&w=1796&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">Add Blogs</h5>
+          <a onclick="showAddBlogs()">
+            <div class="card" style="width: 18rem">
+              <img
+                src="https://images.unsplash.com/photo-1485988412941-77a35537dae4?q=80&w=1796&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Add Blogs</h5>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
         <div class="col-md-3 mb-5" id="showblogcard">
           <div class="card" style="width: 18rem">
@@ -503,6 +506,39 @@
       </thead>
       <tbody id="employeeBody"></tbody>
     </table>
+
+    <!-- Add Blogs -->
+
+    <div id="addblogs">
+      <div class="container">
+        <div class="form-container">
+          <h2 class="text-center mb-4">Add New Blog</h2>
+          <form id="handleAddBlog">
+            <div class="mb-3">
+              <label for="title" class="form-label">Title</label>
+              <input type="text" class="form-control" id="title" placeholder="Enter blog title" required/>
+            </div>
+  
+            <div class="mb-3">
+              <label for="photo" class="form-label">Photo URL</label>
+              <input type="text" class="form-control" id="photo" placeholder="Enter photo URL" required/>
+            </div>
+  
+            <div class="mb-3">
+              <label for="description" class="form-label">Description</label>
+              <input type="text" class="form-control" id="description" placeholder="Enter a brief description" required/>
+            </div>
+  
+            <div class="mb-3">
+              <label for="content" class="form-label">Content</label>
+              <div id="content"></div> <!-- Quill editor will be placed here -->
+            </div>
+  
+            <button type="submit" class="btn btn-primary">Add Blog</button>
+          </form>
+        </div>
+      </div>
+    </div>
     <script
       src="https://kit.fontawesome.com/e9845070d7.js"
       crossorigin="anonymous"
@@ -822,6 +858,7 @@
         document.getElementById("employeeTable").style.display = "none";
         document.getElementById("employee").style.display = "none";
         document.getElementById("registerations").style.display = "none";
+        document.getElementById("addblogs").style.display = "none";
       }
       function showReviews() {
         document.getElementById("reviewsTable").style.display = "block";
@@ -840,6 +877,7 @@
 
         document.getElementById("showregistercard").style.display = "none";
         document.getElementById("registerations").style.display = "none";
+        document.getElementById("addblogs").style.display = "none";
       }
       function showContacts() {
         document.getElementById("reviewsTable").style.display = "none";
@@ -859,6 +897,7 @@
 
         document.getElementById("showregistercard").style.display = "none";
         document.getElementById("registerations").style.display = "none";
+        document.getElementById("addblogs").style.display = "none";
       }
       function showEnquires() {
         document.getElementById("reviewsTable").style.display = "none";
@@ -878,6 +917,7 @@
 
         document.getElementById("showwelcome").style.display = "none";
         document.getElementById("registerations").style.display = "none";
+        document.getElementById("addblogs").style.display = "none";
       }
       function showEmployee() {
         document.getElementById("reviewsTable").style.display = "none";
@@ -897,6 +937,7 @@
 
         document.getElementById("showregistercard").style.display = "none";
         document.getElementById("registerations").style.display = "none";
+        document.getElementById("addblogs").style.display = "none";
       }
       function showAddEmployee() {
         document.getElementById("reviewsTable").style.display = "none";
@@ -917,6 +958,7 @@
         document.getElementById("showregistercard").style.display = "none";
 
         document.getElementById("registerations").style.display = "none";
+        document.getElementById("addblogs").style.display = "none";
       }
       function showRegisters() {
         document.getElementById("reviewsTable").style.display = "none";
@@ -936,6 +978,27 @@
         document.getElementById("registerations").style.display = "block";
 
         document.getElementById("showregistercard").style.display = "none";
+        document.getElementById("addblogs").style.display = "none";
+      }
+      function showAddBlogs() {
+        document.getElementById("reviewsTable").style.display = "none";
+        document.getElementById("contactTable").style.display = "none";
+        document.getElementById("enquiryTable").style.display = "none";
+        document.getElementById("employeeTable").style.display = "none";
+        document.getElementById("employee").style.display = "none";
+        document.getElementById("showteamcard").style.display = "none";
+        document.getElementById("addteamcard").style.display = "none";
+        document.getElementById("showreviewcard").style.display = "none";
+        document.getElementById("showsenquirycard").style.display = "none";
+        document.getElementById("showcontactuscard").style.display = "none";
+        document.getElementById("addblogcard").style.display = "none";
+        document.getElementById("showblogcard").style.display = "none";
+
+        document.getElementById("showwelcome").style.display = "none";
+        document.getElementById("registerations").style.display = "none";
+
+        document.getElementById("showregistercard").style.display = "none";
+        document.getElementById("addblogs").style.display = "block";
       }
     </script>
     <script>
@@ -1026,6 +1089,56 @@
           }
         });
     </script>
+      <script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
+      <script>
+        // Initialize Quill editor
+        const quill = new Quill("#content", {
+          theme: "snow",
+          placeholder: "Write your blog content here...",
+          modules: {
+            toolbar: [
+              [{ header: [1, 2, false] }],
+              ["bold", "italic", "underline"],
+              ["link", "blockquote", "code-block"],
+              [{ list: "ordered" }, { list: "bullet" }],
+              [{ indent: "-1" }, { indent: "+1" }],
+              [{ align: [] }],
+              ["clean"],
+            ],
+          },
+        });
+  
+        document.getElementById("handleAddBlog").addEventListener("submit", (e) => {
+          e.preventDefault();
+          let title = document.getElementById("title").value;
+          let photo = document.getElementById("photo").value;
+          let description = document.getElementById("description").value;
+          let content = quill.root.innerHTML; // Get the HTML content from Quill editor
+  
+          const addBlog = async () => {
+            try {
+              const data = await fetch("https://www.anshinfotech.org/api/blog", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                  title,
+                  photo,
+                  description,
+                  content,
+                }),
+              });
+  
+              const blogdata = await data.json();
+              console.log(blogdata);
+            } catch (error) {
+              console.log(error);
+            }
+          };
+          addBlog();
+        });
+      </script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

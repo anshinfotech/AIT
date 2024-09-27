@@ -12,6 +12,7 @@ const enquiryRoute = require("./Routes/enquiryRoutes.js");
 const registerRoute = require("./Routes/registrationRoutes.js");
 const reviewRoute = require("./Routes/reviewRoutes.js");
 const teamRoute = require("./Routes/teamRoutes.js");
+const blogRoute = require("./Routes/blogRoutes.js");
 const DB = require("./database.js");
 app.use(cookieParser());
 
@@ -40,6 +41,7 @@ app.use("/api", adminRoute);
 app.use("/api", reviewRoute);
 
 app.use("/api", teamRoute);
+app.use("/api", blogRoute);
 
 app.use((req, res, next) => {
   res.status(404).sendFile(path.join(__dirname, "public", "404.html"));
