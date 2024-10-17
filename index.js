@@ -22,6 +22,7 @@ app.use(
   cors({
     credentials: true,
     origin: "https://www.anshinfotech.org",
+    // origin: "*",
   })
 );
 
@@ -49,5 +50,5 @@ app.use((req, res, next) => {
 
 // Start the server
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`Ansh Infotech Website Server is running on port ${PORT}`);
 });

@@ -1,9 +1,10 @@
 const mongoose = require("mongoose");
+require("dotenv").config();
 
 const DB = async () => {
   try {
     await mongoose.connect(
-      "mongodb+srv://anshinfotech1:f8QiKYpsDE53Cs6l@cluster0.iqayfbm.mongodb.net/ait",
+      process.env.MONGODB_URI,
       {
         serverSelectionTimeoutMS: 30000, // 30 seconds
         socketTimeoutMS: 45000, // 45 seconds
