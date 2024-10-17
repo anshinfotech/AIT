@@ -533,11 +533,11 @@
             <div class="mb-3">
               <label for="photo" class="form-label">Photo URL</label>
               <input
-                type="text"
+                type="file"
                 class="form-control"
-                id="photo"
-                placeholder="Enter photo URL"
-                required
+                id="blog_photo"
+                name="blogImage"
+                accept=".png,.jpeg,.jpg"
               />
             </div>
 
@@ -1116,6 +1116,28 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
     <script>
+      //cloudinary widget
+      var result;
+      var myWidget = cloudinary.createUploadWidget(
+        {
+          cloudName: "dohhbq1ly",
+          uploadPreset: "dtp53xo0",
+        },
+        (error, res) => {
+          if (!error && res && res.event === "success") {
+            result = res;
+            console.log("Done! Here is the image info: ", result.info);
+          }
+        }
+      );
+
+      document.getElementById("blog_photo").addEventListener(
+        "click",
+        function () {
+          myWidget.open();
+        },
+        false
+      );
       // Initialize Quill editor
       const quill = new Quill("#content", {
         theme: "snow",
@@ -1139,9 +1161,10 @@
         .addEventListener("submit", (e) => {
           e.preventDefault();
           let title = document.getElementById("title").value;
-          let photo = document.getElementById("photo").value;
           let description = document.getElementById("description").value;
           let content = quill.root.innerHTML; // Get the HTML content from Quill editor
+
+          const blogImage = result.info.secure_url;
 
           const addBlog = async () => {
             try {
@@ -1154,7 +1177,7 @@
                   },
                   body: JSON.stringify({
                     title,
-                    photo,
+                    photo: blogImage,
                     description,
                     content,
                   }),
