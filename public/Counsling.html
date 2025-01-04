@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-PBC9KP87");
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Empower your business with ANSH INFOTECH, Ludhiana's top IT solutions provider.From development to cybersecurity, AI to digital marketing, we got you covered!"
+    />
+    <meta
+      property="og:title"
+      content="Home - ANSH InfoTech:Leading IT Solutions in Ludhiana"
+    />
+    <meta
+      property="og:description"
+      content="Empower your business with ANSH INFOTECH, Ludhiana's top IT solutions provider.From development to cybersecurity, AI to digital marketing, we got you covered!"
+    />
+    <meta property="og:url" content="https://www.anshinfotech.org" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://www.anshinfotech.org/logo" />
+
+    <title>Enquiry - ANSH InfoTech:Leading IT Solutions in Ludhiana</title>
+    <link rel="canonical" href="https://www.anshinfotech.org" />
+    <link rel=" icon" href="logo.webP" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="register.css" />
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <style>
+      .other {
+        display: none;
+      }
+      input[type="number"] {
+        -moz-appearance: textfield;
+        appearance: textfield;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-PBC9KP87"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-- *navbar -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <!-- <img src="images/logo.webP" alt="Bootstrap" width="240" height="50" /> -->
+          <h1 class="heading">ANSH InfoTech</h1>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="offcanvas offcanvas-end"
+          tabindex="-1"
+          id="navbarSupportedContent"
+          aria-labelledby="navbarSupportedContentLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="navbarSupportedContentLabel">
+              Menu
+            </h5>
+            <button
+              type="button"
+              class="btn-close text-reset"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav ms-auto me-auto">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="index.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a href="FaQ's.html" class="nav-link">FaQ's</a>
+              </li>
+              <li class="nav-item">
+                <a href="training.html" class="nav-link"
+                  >Skill Development Training</a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="Blogs.html" class="nav-link">Blogs</a>
+              </li>
+              <li class="nav-item">
+                <a href="register.html" class="nav-link">Register</a>
+              </li>
+              <li class="nav-item">
+                <a href="Contactus.html" class="nav-link">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- *navbar -->
+    <!--* hero -->
+
+    <div class="container mt-5">
+      <h2 class="text-center">Personal Information Form</h2>
+      <form class="enq-form">
+        <div class="row mb-3">
+          <label for="name" class="col-sm-2 col-form-label">Name</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              placeholder="Enter your name"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label for="fatherName" class="col-sm-2 col-form-label"
+            >Father's Name</label
+          >
+          <div class="col-sm-10">
+            <input
+              type="text"
+              class="form-control"
+              id="fatherName"
+              placeholder="Enter your father's name"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label for="motherName" class="col-sm-2 col-form-label"
+            >Mother's Name</label
+          >
+          <div class="col-sm-10">
+            <input
+              type="text"
+              class="form-control"
+              id="motherName"
+              placeholder="Enter your mother's name"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label for="mobile" class="col-sm-2 col-form-label">Mobile</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              class="form-control"
+              id="mobile"
+              placeholder="Enter your mobile number"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label for="altMobile" class="col-sm-2 col-form-label"
+            >Alternative Mobile</label
+          >
+          <div class="col-sm-10">
+            <input
+              type="text"
+              class="form-control"
+              id="altMobile"
+              placeholder="Enter your alternative mobile number"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label for="email" class="col-sm-2 col-form-label">Email</label>
+          <div class="col-sm-10">
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="Enter your email address"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label for="address" class="col-sm-2 col-form-label">Address</label>
+          <div class="col-sm-10">
+            <textarea
+              class="form-control"
+              id="address"
+              rows="3"
+              placeholder="Enter your address"
+              required
+            ></textarea>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label for="dob" class="col-sm-2 col-form-label">Date of Birth</label>
+          <div class="col-sm-10">
+            <input type="date" class="form-control" id="dob" required />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label for="gender" class="col-sm-2 col-form-label">Gender</label>
+          <div class="col-sm-10">
+            <select class="form-select" id="gender" required>
+              <option value="" disabled selected>Select Gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label for="course" class="col-sm-2 col-form-label"
+            >Enquiry for</label
+          >
+          <div class="col-sm-10">
+            <select class="form-select" id="course" required>
+              <option value="" disabled selected>Enquiry for</option>
+              <option value="Web Development">Web Development</option>
+              <option value="Mobile Application Development">
+                Mobile Application Development
+              </option>
+              <option value="Artificial Intelligence">
+                Artificial Intelligence
+              </option>
+              <option value="Machine Learning">Machine Learning</option>
+              <option value="Data Analytics">Data Analytics</option>
+              <option value="Graphic Designing">Graphic Designing</option>
+              <option value="Digital Marketing">Digital Marketing</option>
+              <option value="Java Programming">Java Programming</option>
+              <option value="Python Programming">Python Programming</option>
+              <option value="Embedded Systems">Embedded Systems</option>
+              <option value="Cloud Computing">Cloud Computing</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label for="batchTime" class="col-sm-2 col-form-label"
+            >Preferred Batch</label
+          >
+          <div class="col-sm-10">
+            <select class="form-select" id="batchTime" required>
+              <option value="" disabled selected>Select your Batch</option>
+              <option value="Morning 9:30am">Morning 9:30am</option>
+              <option value="Morning 11:30am">Morning 11:30am</option>
+              <option value="Afternoon 2:30pm">Afternoon 2:30pm</option>
+              <option value="Afternoon 4:00pm">Afternoon 4:00pm</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label for="review" class="col-sm-2 col-form-label"
+            >Come to know about AIT From</label
+          >
+          <div class="col-sm-10">
+            <select class="form-select" id="review" required>
+              <option value="" disabled selected>
+                Come to know about AIT From
+              </option>
+              <option value="Teacher">Teacher</option>
+              <option value="Friend">Friend</option>
+              <option value="Website">Website</option>
+              <option value="Social Media">Social Media</option>
+              <option value="College/University">College/University</option>
+              <option value="Seminar">Seminar</option>
+              <option value="Advertisement">Advertisement</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-sm-10 offset-sm-2">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!--* hero -->
+    <!--todo footer -->
+    <footer>
+      <div class="container">
+        <div class="row footer-row">
+          <div class="col-md-5 footer-col">
+            <!-- <img
+              src="https://preview.codeless.co/converta/default/wp-content/uploads/2023/02/logo.webP"
+              alt=""
+              class="img-fluid col-4"
+            /> -->
+            <h1 class="heading">ANSH InfoTech</h1>
+            <p>
+              Creative-powered to fuel your growth goals. We build world-class
+              digital products, software and branding.
+            </p>
+          </div>
+          <div class="col-md-6">
+            <div class="row" style="gap: 80px">
+              <div class="col-4 footer-col">
+                <h5>Reach Out To Us</h5>
+                <ul>
+                  <li>
+                    <i class="fa-solid fa-message"></i> anshinfotech1@gmail.com
+                  </li>
+                  <li><i class="fa-solid fa-phone"></i> +91 88376 54161</li>
+                  <li><i class="fa-solid fa-phone"></i> +91 82647 54342</li>
+                </ul>
+              </div>
+              <div class="col-4 footer-col">
+                <h5>Quick Links</h5>
+                <ul class="quick-links">
+                  <li>
+                    <a href="Contactus.html">Contact Us</a>
+                  </li>
+                  <li>
+                    <a href="about.html">About us</a>
+                  </li>
+                  <li>
+                    <a href="FaQ's.html">Frequently Asked Questions</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- copyright -->
+      <div class="container-fluid mt-3">
+        <div class="container">
+          <div class="row justify-content-between">
+            <div class="col-md-8 copy-col">
+              <span>&copy; Copyright ANSH InfoTech - All Rights Reserved.</span>
+            </div>
+            <div class="col-md-3 copy-col">
+              <i class="fab fa-facebook"></i> <i class="fab fa-instagram"></i>
+              <i class="fab fa-linkedin"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      const enquiryFormSubmission = async () => {
+        const form = document.getElementById("enq-form");
+
+        form.addEventListener("submit", async function (e) {
+          e.preventDefault();
+
+          const name = document.getElementById("name");
+          const fatherName = document.getElementById("fatherName");
+          const motherName = document.getElementById("motherName");
+          const mobile = document.getElementById("mobile");
+          const altmobile = document.getElementById("altmobile");
+          const dob = document.getElementById("dob");
+          const email = document.getElementById("email");
+          const gender = document.getElementById("gender");
+          const batchTime = document.getElementById("batchTime");
+          const course = document.getElementById("course");
+          const review = document.getElementById("review");
+
+          if (
+            !name ||
+            !fatherName ||
+            !motherName ||
+            !mobile ||
+            !altmobile ||
+            !dob ||
+            !email ||
+            !gender ||
+            !batchTime ||
+            !course ||
+            !review
+          ) {
+            window.alert("Missing Input Fields");
+          } else {
+            const response = await fetch(
+              "https://www.anshinfotech.org/api/student-enquiry",
+              {
+                method: "POST",
+                body: JSON.stringify({
+                  name,
+                  fatherName,
+                  motherName,
+                  mobile,
+                  altmobile,
+                  dob,
+                  email,
+                  gender,
+                  batchTime,
+                  course,
+                  review,
+                }),
+              }
+            );
+
+            const data = await response.json();
+
+            if (data.success) {
+              window.alert(data.message || "Form Submitted Successfully");
+            } else {
+              window.alert(data.message || "Failed to submit data");
+            }
+          }
+        });
+      };
+
+      document.addEventListener("DOMContentLoaded", enquiryFormSubmission);
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>

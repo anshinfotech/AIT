@@ -1,6 +1,7 @@
 const Enquiry = require("../Models/enquiryModel");
 const nodemailer = require("nodemailer");
-const exceljs=require("exceljs")
+const exceljs = require("exceljs");
+const { courseModel } = require("../Models/CourseEnquiry");
 
 const transporter = nodemailer.createTransport({
   service: "gmail",
@@ -55,23 +56,23 @@ const allEnquiries = async (req, res) => {
 
 const downloadExcel = async (req, res) => {
   try {
-    let workbook= new exceljs.Workbook()
-    const sheet = workbook.addWorksheet("Contact Enquiries")
+    let workbook = new exceljs.Workbook();
+    const sheet = workbook.addWorksheet("Contact Enquiries");
     const enquirydata = await Enquiry.find().sort({ name: "ascending" });
-    sheet.columns=[
-      {header:"Name",key:"name",width:35},
-      {header:"Phone",key:"phone",width:35},
-      {header:"College",key:"college",width:50},
-      {header:"Course",key:"course",width:35},
-    ]
-    enquirydata.map(enquiry=>{
+    sheet.columns = [
+      { header: "Name", key: "name", width: 35 },
+      { header: "Phone", key: "phone", width: 35 },
+      { header: "College", key: "college", width: 50 },
+      { header: "Course", key: "course", width: 35 },
+    ];
+    enquirydata.map((enquiry) => {
       sheet.addRow({
-        name:enquiry.name,
-        phone:enquiry.phone,
-        college:enquiry.college,
-        course:enquiry.course,
-      })
-    })
+        name: enquiry.name,
+        phone: enquiry.phone,
+        college: enquiry.college,
+        course: enquiry.course,
+      });
+    });
     const headerRow = sheet.getRow(1);
     headerRow.eachCell((cell) => {
       cell.font = { bold: true };
@@ -80,15 +81,61 @@ const downloadExcel = async (req, res) => {
       "Content-Type",
       "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
     );
-    res.setHeader(
-      "Content-Disposition",
-      "attachment; filename=enquiries.xlsx"
-    );
-    await workbook.xlsx.write(res)
-    res.end()
+    res.setHeader("Content-Disposition", "attachment; filename=enquiries.xlsx");
+    await workbook.xlsx.write(res);
+    res.end();
   } catch (error) {
-    res.send(error)
+    res.send(error);
   }
 };
 
-module.exports = { allEnquiries, submitEnquiry,downloadExcel };
+const courseEnquiryMethod = async (req, res) => {
+  try {
+    const {
+      name,
+      fatherName,
+      motherName,
+      mobile,
+      altmobile,
+      dob,
+      email,
+      gender,
+      batchTime,
+      course,
+      review,
+    } = req.body;
+
+    const response = await courseModel.create({
+      name,
+      fatherName,
+      motherName,
+      mobile,
+      altmobile,
+      dob,
+      email,
+      gender,
+      batchTime,
+      course,
+      review,
+    });
+
+    if (!response) {
+      return res.status(400).json({
+        success: false,
+        message: "Failed to submit data",
+      });
+    }
+
+    res.status(201).json({
+      success: true,
+      message: "Submitted Successfully",
+    });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
+module.exports = { allEnquiries, submitEnquiry, downloadExcel , courseEnquiryMethod};
