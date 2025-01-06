@@ -65,16 +65,16 @@
     </style>
   </head>
   <body>
-        <!-- Google Tag Manager (noscript) -->
-        <noscript
-        ><iframe
-          src="https://www.googletagmanager.com/ns.html?id=GTM-PBC9KP87"
-          height="0"
-          width="0"
-          style="display: none; visibility: hidden"
-        ></iframe
-      ></noscript>
-      <!-- End Google Tag Manager (noscript) -->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-PBC9KP87"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <!-- *navbar -->
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
@@ -166,9 +166,7 @@
         </div>
         <div class="row justify-content-center">
           <div class="col-md-9 register-form-col">
-            <form
-              id="registrationForm"
-            >
+            <form id="registrationForm">
               <div class="row justify-content-center gap-0">
                 <div class="col-md-4 register-input-group">
                   <input
@@ -644,24 +642,24 @@
               <div class="col-4 footer-col">
                 <h5>Reach Out To Us</h5>
                 <ul>
-                  <li><i class="fa-solid fa-message"></i> anshinfotech1@gmail.com
-                  </li>
                   <li>
-                    <i class="fa-solid fa-phone"></i> +91 88376 54161
+                    <i class="fa-solid fa-message"></i> anshinfotech1@gmail.com
                   </li>
-                  <li>
-                    <i class="fa-solid fa-phone"></i> +91 82647 54342
-                  </li>
+                  <li><i class="fa-solid fa-phone"></i> +91 88376 54161</li>
+                  <li><i class="fa-solid fa-phone"></i> +91 82647 54342</li>
                 </ul>
               </div>
               <div class="col-4 footer-col">
-                <h5 >Quick Links</h5>
+                <h5>Quick Links</h5>
                 <ul class="quick-links">
                   <li>
                     <a href="Contactus.html">Contact Us</a>
                   </li>
                   <li>
                     <a href="about.html">About us</a>
+                  </li>
+                  <li>
+                    <a href="Counsling.html">Enquiry</a>
                   </li>
                   <li>
                     <a href="FaQ's.html">Frequently Asked Questions</a>
@@ -705,8 +703,7 @@
               name: document.getElementById("name").value,
               father_name: document.getElementById("father_name").value,
               mother_name: document.getElementById("mother_name").value,
-              contactNumber:
-                document.getElementById("contactNumber").value,
+              contactNumber: document.getElementById("contactNumber").value,
               alternateContactNumber: document.getElementById(
                 "alternateContactNumber"
               ).value,
@@ -718,10 +715,9 @@
               state: document.getElementById("state").value,
               city: document.getElementById("city").value,
               course: document.getElementById("course").value,
-              OtherState:document.getElementById("other").value,
+              OtherState: document.getElementById("other").value,
               trainingMethod: document.getElementById("trainingMethod").value,
-              trainingPeriod:
-                document.getElementById("trainingPeriod").value,
+              trainingPeriod: document.getElementById("trainingPeriod").value,
             }),
           })
             .then((response) => response.json())
@@ -731,7 +727,7 @@
                 // Registration successful
                 console.log(data);
                 alert("Registration successful!");
-                window.location.reload()
+                window.location.reload();
                 // You can redirect or perform additional actions here
               } else {
                 // Registration failed
