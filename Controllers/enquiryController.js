@@ -100,7 +100,9 @@ const courseEnquiryMethod = async (req, res) => {
       dob,
       email,
       gender,
+      address,
       batchTime,
+      enqFor,
       course,
       review,
     } = req.body;
@@ -113,8 +115,10 @@ const courseEnquiryMethod = async (req, res) => {
       altmobile,
       dob,
       email,
+      address,
       gender,
       batchTime,
+      enqFor,
       course,
       review,
     });
@@ -154,7 +158,30 @@ const courseEnquiryMethod = async (req, res) => {
   } catch (error) {
     res.status(400).json({
       success: false,
-      message: error.message + " Error",
+      message: error.message,
+    });
+  }
+};
+
+const getAllCounsellingEnquiries = async (req, res) => {
+  try {
+    const data = await courseModel.find();
+
+    if (!data) {
+      return res.status(400).json({
+        success: false,
+        message: "No data found!",
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      Data: data,
+    });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      message: error.message,
     });
   }
 };
@@ -164,4 +191,5 @@ module.exports = {
   submitEnquiry,
   downloadExcel,
   courseEnquiryMethod,
+  getAllCounsellingEnquiries,
 };

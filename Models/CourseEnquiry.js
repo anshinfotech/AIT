@@ -12,6 +12,8 @@ const courseEnquiry = new mongoose.Schema({
   batchTime: { type: String },
   course: { type: String },
   review: { type: String },
+  address: { type: String },
+  enqFor: { type: String },
 });
 
 const courseModel = new mongoose.model("courseEnquiries", courseEnquiry);
