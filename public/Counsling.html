@@ -147,7 +147,7 @@
 
     <div class="container mt-5">
       <h2 class="text-center">Personal Information Form</h2>
-      <form class="enq-form">
+      <form id="enq-form">
         <div class="row mb-3">
           <label for="name" class="col-sm-2 col-form-label">Name</label>
           <div class="col-sm-10">
@@ -406,17 +406,17 @@
         form.addEventListener("submit", async function (e) {
           e.preventDefault();
 
-          const name = document.getElementById("name");
-          const fatherName = document.getElementById("fatherName");
-          const motherName = document.getElementById("motherName");
-          const mobile = document.getElementById("mobile");
-          const altmobile = document.getElementById("altmobile");
-          const dob = document.getElementById("dob");
-          const email = document.getElementById("email");
-          const gender = document.getElementById("gender");
-          const batchTime = document.getElementById("batchTime");
-          const course = document.getElementById("course");
-          const review = document.getElementById("review");
+          const name = document.getElementById("name").value;
+          const fatherName = document.getElementById("fatherName").value;
+          const motherName = document.getElementById("motherName").value;
+          const mobile = document.getElementById("mobile").value;
+          const altmobile = document.getElementById("altMobile").value;
+          const dob = document.getElementById("dob").value;
+          const email = document.getElementById("email").value;
+          const gender = document.getElementById("gender").value;
+          const batchTime = document.getElementById("batchTime").value;
+          const course = document.getElementById("course").value;
+          const review = document.getElementById("review").value;
 
           if (
             !name ||

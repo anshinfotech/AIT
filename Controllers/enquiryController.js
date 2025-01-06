@@ -126,6 +126,27 @@ const courseEnquiryMethod = async (req, res) => {
       });
     }
 
+    const mailMessage = {
+      from: "anshinfotech1@gmail.com",
+      to: email,
+      subject: "Thank you for your enquiry", // Subject line
+      text: `We have received your enquiry. We will get back to you soon Please note down the below given id for future purposes.  Refernce No.:- ${response._id}`, // Plain text body
+      // You can also include HTML content
+      html: `We have received your enquiry. We will get back to you soon Please note down the below given id for future purposes. Refernce No.:- ${response._id}`,
+    };
+
+    const selfMessage = {
+      from: email,
+      to: "anshinfotech1@gmail.com",
+      subject: "New Admission Enquiry Arrived", // Subject line
+      text: `New Enquiry has been arrived for the field of ${course} by author ${name}. Email and contact number is ${email}/${mobile}`, // Plain text body
+      // You can also include HTML content
+      html: `New Enquiry has been arrived for the field of ${course} by author ${name}. Email and contact number is ${email}/${mobile}`,
+    };
+
+    await transporter.sendMail(mailMessage);
+    await transporter.sendMail(selfMessage);
+
     res.status(201).json({
       success: true,
       message: "Submitted Successfully",
@@ -138,4 +159,9 @@ const courseEnquiryMethod = async (req, res) => {
   }
 };
 
-module.exports = { allEnquiries, submitEnquiry, downloadExcel , courseEnquiryMethod};
+module.exports = {
+  allEnquiries,
+  submitEnquiry,
+  downloadExcel,
+  courseEnquiryMethod,
+};
