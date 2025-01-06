@@ -434,12 +434,11 @@
             window.alert("Missing Input Fields");
           } else {
             const response = await fetch(
-              // "https://www.anshinfotech.org/api/student-enquiry",
-              "http://localhost:3000/api/student-enquiry",
+              "https://www.anshinfotech.org/api/student-enquiry",
               {
                 method: "POST",
                 headers: {
-                  "Content-Type": "application/json", // Add this header
+                  "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
                   name,
