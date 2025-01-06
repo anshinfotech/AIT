@@ -184,6 +184,11 @@ const adminLogin = async (req, res) => {
 const getAdminDashboard = (req, res) => {
   res.sendFile(path.join(__dirname, "../public", "admin.html"));
 };
+
+const getEnquiryData = (req, res) => {
+  res.sendFile(path.join(__dirname, "../public", "CousData.html"));
+};
+
 module.exports = {
   createAdmin,
   getAdminPage,
@@ -191,4 +196,5 @@ module.exports = {
   adminLogin,
   getAdminDashboard,
   verifyAdmin,
+  getEnquiryData,
 };
