@@ -309,19 +309,6 @@
           </div>
         </div>
 
-        <div class="row mb-3">
-          <label for="batchTime" class="col-sm-2 col-form-label"
-            >Preferred Batch</label
-          >
-          <div class="col-sm-10">
-            <select class="form-select" id="batchTime" required>
-              <option value="" disabled selected>Select your Batch</option>
-              <option value="Morning 9:30am">Morning 9:30am</option>
-              <option value="Morning 11:30am">Morning 11:30am</option>
-              <option value="Afternoon 2:30pm">Afternoon 2:30pm</option>
-              <option value="Afternoon 4:00pm">Afternoon 4:00pm</option>
-            </select>
-          </div>
         </div>
 
         <div class="row mb-3">
@@ -434,7 +421,6 @@
           const dob = document.getElementById("dob").value;
           const email = document.getElementById("email").value;
           const gender = document.getElementById("gender").value;
-          const batchTime = document.getElementById("batchTime").value;
           const course = document.getElementById("course").value;
           const review = document.getElementById("review").value;
           const address = document.getElementById("address").value;
@@ -448,7 +434,6 @@
             !dob ||
             !email ||
             !gender ||
-            !batchTime ||
             !course ||
             !review ||
             !enqFor ||
@@ -472,7 +457,6 @@
                   dob,
                   email,
                   gender,
-                  batchTime,
                   course,
                   review,
                   enqFor,

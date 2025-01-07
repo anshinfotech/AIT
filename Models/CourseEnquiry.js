@@ -9,7 +9,6 @@ const courseEnquiry = new mongoose.Schema({
   dob: { type: Date },
   email: { type: String },
   gender: { type: String },
-  batchTime: { type: String },
   course: { type: String },
   review: { type: String },
   address: { type: String },

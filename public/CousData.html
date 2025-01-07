@@ -159,7 +159,7 @@
               "Alternative Mobile",
               "Email",
               "Enquiry For",
-              "Preferred Batch",
+              "Domain",
               "Gender",
               "Date of Birth",
               "Preferred By",
@@ -181,7 +181,6 @@
               const altMobile = document.createElement("td");
               const email = document.createElement("td");
               const enqFor = document.createElement("td");
-              const preBatch = document.createElement("td");
               const gender = document.createElement("td");
               const dob = document.createElement("td");
               const review = document.createElement("td");
@@ -194,7 +193,6 @@
               motherName.innerText = item.motherName;
               dob.innerText = new Date(item.dob).toDateString();
               review.innerText = item.review;
-              preBatch.innerText = item.batchTime;
               gender.innerText = item.gender;
               enqFor.innerText = item.enqFor;
               course.innerText = item.course;
@@ -211,11 +209,10 @@
               dataRow.append(altMobile);
               dataRow.append(email);
               dataRow.append(enqFor);
-              dataRow.append(preBatch);
+              dataRow.append(course);
               dataRow.append(gender);
               dataRow.append(dob);
               dataRow.append(review); 
-              dataRow.append(course); 
 
               table.append(dataRow)
             });
