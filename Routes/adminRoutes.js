@@ -9,7 +9,7 @@ const {
 } = require("../Controllers/adminController");
 const { requireAdminLogin } = require("../Middlewares/middleware");
 const router = require("express").Router();
-const Admin = require("../models/admin"); // <-- Add this line
+const Admin = require('../Models/adminModel'); // <-- Add this line
 
 router
   .post("/admin/register", createAdmin)
